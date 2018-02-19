@@ -1,0 +1,24 @@
+{
+  "name": "characterbuild",
+  "version": "0.0.1",
+  "description": "server-side character builder",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "hapi",
+    "character",
+    "builder"
+  ],
+  "author": "Lightbolt",
+  "license": "MIT",
+  "dependencies": {
+    "promisify-es6": "^1.0.3",
+    "glue": "^5.0.0",
+    "hapi-moongoose-models-plugin": "^0.0.3",
+    "hapi-routes-plugin": "^0.0.2"
+  }
+}
