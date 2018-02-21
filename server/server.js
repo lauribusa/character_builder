@@ -25,16 +25,6 @@ const manifest = {
 };
 
 
-const validate = (request, username, password, callback) => {
-  const user = users[username];
-    if (!user) {
-        return callback(null, false);
-    }
-
-    Bcrypt.compare(password, user.password, (err, isValid) => {
-        callback(err, isValid, { id: user.id, name: user.name });
-    });
-};
 
 
 const start = async () => {
@@ -42,6 +32,7 @@ const start = async () => {
       const server = await Glue.compose(manifest);
      // server.auth.strategy('simple', 'basic', { validateFunc: validate });
       await server.start();
+      console.log(server);
       
       console.log('Server started at :' + server.info.uri);
     } catch (err) {
