@@ -12,9 +12,19 @@ const manifest = {
 		} 
 	},
 	register: {
-		plugins: [{ plugin: models, options: { database: 'armory' } }, routes]
+		plugins: [
+      { 
+        plugin: models, 
+        options: { 
+          database: 'armory'
+        } 
+      }, 
+      routes
+    ]
 	}
 };
+
+
 const validate = (request, username, password, callback) => {
   const user = users[username];
     if (!user) {
