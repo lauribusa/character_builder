@@ -1,7 +1,6 @@
 const Bcrypt = require('bcrypt');
-const Basic = require('hapi-auth-basic');
 const validate = function (request, username, password, callback) {
-	const user = users[username];
+	const user = username;
 	if (!user) {
 		return callback(null, false);
 	}
@@ -10,9 +9,9 @@ const validate = function (request, username, password, callback) {
 		callback(err, isValid, { id: user.id, name: user.name });
 	});
 };
-const Hoek = require('hoek')
+const Hoek = require('hoek');
 
-exports.register = (server, options, next) => {  
+exports.register = (server, Basic, options, next) => {  
 	// register dependency to hapi-auth-cookie
 	// and make sure it’s available to this plugin
 	server.register({

@@ -27,8 +27,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## Routes
-
-Page de démarrage = http://localhost:4200 redirection http://localhost:4200/characterList
-login = http://localhost:4200/login 
-Liste de personnage = http://localhost:4200/characterList
-Personnage + objets = http://localhost:4200/character
