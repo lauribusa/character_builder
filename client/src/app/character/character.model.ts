@@ -1,4 +1,4 @@
-export class characterStats {
+export class CharacterStats {
 
     name: String;
     class: String;
