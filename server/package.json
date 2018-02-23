@@ -21,6 +21,7 @@
     "hapi": "^17.2.0",
     "hapi-auth-basic": "^5.0.0",
     "hapi-auth-cookie": "^8.1.0",
+    "hapi-mongodb": "^7.1.0",
     "hapi-moongoose-models-plugin": "^0.0.3",
     "hapi-routes-plugin": "^0.0.2",
     "promisify-es6": "^1.0.3"

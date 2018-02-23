@@ -1,22 +1,12 @@
-const Glue = require('glue')
-const routes = require('hapi-routes-plugin')
-const Bcrypt = require('bcrypt')
+const Glue = require('glue');
+const routes = require('hapi-routes-plugin');
+const Bcrypt = require('bcrypt');
+const Mongo = require ('hapi-mongodb');
 const Cookie = require ('hapi-auth-cookie')
 const models = require('hapi-moongoose-models-plugin')
 const Basic = require('hapi-auth-basic')
-const authentication = require('./plugins/authenticate');
-const validate = async (request, username, password, h) => {
+const authenticate = require('./plugins/authenticate');
 
-  const user = request.mongo.db;
-  if (!user) {
-      return { credentials: null, isValid: false };
-  }
-
-  const isValid = await Bcrypt.compare(password, user.password);
-  const credentials = { id: user.id, name: user.name };
-
-  return { isValid, credentials };
-};
 const manifest = {
 	server: {
 		port: 8000,
@@ -36,10 +26,20 @@ const manifest = {
         } 
       },
       {
+        plugin: Mongo,
+        options: {
+          url: 'mongodb://localhost:27017/armory',
+          settings: {
+              poolSize: 10
+          },
+          decorate: true
+        }
+      },
+      {
         plugin: Basic
       },
       {
-        plugin: authentication
+        plugin: authenticate
       },
       routes
     ],
