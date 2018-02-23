@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { CharacterStats } from './character.model';
 
 @Component({
   selector: 'app-character',
@@ -7,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./character.component.css']
 })
 export class CharacterComponent implements OnInit {
-  title = 'Character Selected';
 
-  constructor() {
-  }
+  constructor() { }
+
   ngOnInit() {
   }
 

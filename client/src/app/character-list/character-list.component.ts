@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { CharacterStats } from '../character/character.model';
+import { CharacterService } from '../shared/character.service';
+import { CharacterStats } from '../shared/character.model';
 
 @Component({
   selector: 'app-character-list',
@@ -7,12 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./character-list.component.css']
 })
 export class CharacterListComponent implements OnInit {
-  title = 'Characters List';
-  // characterStats: CharacterStats[];
-  constructor() { }
+  characterStats: CharacterStats[];
 
-  ngOnInit() {
-    console.log();
+  constructor(public characterService: CharacterService) {
+    this.characterStats = new Array;
+
   }
 
+  ngOnInit() {
+    this.characterService.getAll().then(result => {
+      console.log(this.characterStats);
+    });
+
+  }
 }

@@ -4,32 +4,37 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { CharacterComponent } from './character/character.component';
+import { CharacterService } from './shared/character.service';
+import { CharacterEditComponent } from './characterEdit/characterEdit.component';
 import { CharacterListComponent } from './character-list/character-list.component';
 import { LoginComponent } from './login/login.component';
 import { ItemListComponent } from './item-list/item-list.component';
+import { CharacterComponent } from './character/character.component';
+
 
 const routes = [
   { path: '',  redirectTo: 'characterList', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'characterList', component: CharacterListComponent },
-  { path: 'character', component: CharacterComponent }
+  { path: 'character', component: CharacterComponent },
+  { path: 'characterEdit', component: CharacterEditComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    CharacterComponent,
+    CharacterEditComponent,
     CharacterListComponent,
     LoginComponent,
-    ItemListComponent
+    ItemListComponent,
+    CharacterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
