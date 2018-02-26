@@ -1,16 +1,18 @@
 const Bcrypt = require('bcrypt');
 const User = require('../api/users/models/user');
 const validate = async (request, username, password, h) => {
+
 	//console.log(request.mongo.db.collection('users'));
 	//const db = request.mongo.db;
-	const user = User.find();
+	const user = await User.findOne({'username':username});
+	console.log(user);
 	//console.log(request.mongo.db);
 	if (!user) {
 		return { credentials: null, isValid: false };
 	}
 	const isValid = await Bcrypt.compare(password, user.password);
 	const credentials = { id: user.id, name: user.username };
-	console.log(user);
+	//console.log(user);
 	return { isValid, credentials };
   };
 

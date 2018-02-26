@@ -6,9 +6,6 @@ const schema = new Schema({
 	},
 	password:{
 		type: String
-	},
-	id:{
-		type: Number
 	}
 });
 module.exports = mongoose.model('User', schema);

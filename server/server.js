@@ -1,11 +1,11 @@
-const Glue = require('glue');
-const routes = require('hapi-routes-plugin');
-const Bcrypt = require('bcrypt');
-const Mongo = require ('hapi-mongodb');
+const Glue = require('glue')
+const routes = require('hapi-routes-plugin')
+const Bcrypt = require('bcrypt')
+const Mongo = require ('hapi-mongodb')
 const Cookie = require ('hapi-auth-cookie')
 const models = require('hapi-moongoose-models-plugin')
 const Basic = require('hapi-auth-basic')
-const authenticate = require('./plugins/authenticate');
+const authenticate = require('./plugins/authenticate')
 
 const manifest = {
 	server: {
@@ -67,6 +67,6 @@ const start = async () => {
       console.error(err)
       process.exit(1)
     }
-  };
+  }
 
   start()

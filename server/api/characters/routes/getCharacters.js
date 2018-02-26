@@ -5,5 +5,8 @@ module.exports = {
   handler: async (req, h) => {
     let characters = await Character.find();
     return characters;
+  },
+  options:{
+    auth: false
   }
 };

@@ -4,6 +4,9 @@ const schema = new Schema({
 	name: {
 		type: String
 	},
+	owner:{
+		type: String
+	},
 	class: {
 		type: String
 	},
