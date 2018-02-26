@@ -13,4 +13,5 @@ Port 8000 for server-side
 Page de démarrage = http://localhost:4200 redirection http://localhost:4200/characterList
 login = http://localhost:4200/login 
 Liste de personnage (GET character)= http://localhost:4200/characterList
-Personnage + objets (POST character)= http://localhost:4200/character
+Personnage + objets (POST character)= http://localhost:4200/characterEdit
+Personnage =  http://localhost:4200/character
