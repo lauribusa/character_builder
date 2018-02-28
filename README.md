@@ -14,4 +14,4 @@ Page de démarrage = http://localhost:4200 redirection http://localhost:4200/cha
 login = http://localhost:4200/login 
 Liste de personnage (GET character)= http://localhost:4200/characterList
 Personnage + objets (POST character)= http://localhost:4200/characterEdit
-Personnage =  http://localhost:4200/character
+Personnage (GET character)=  http://localhost:4200/character
