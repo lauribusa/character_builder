@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Character } from '../shared/character.model';
 
 @Component({
   selector: 'app-character',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./character.component.css']
 })
 export class CharacterComponent implements OnInit {
+  title = 'Character';
 
   constructor() { }
 
