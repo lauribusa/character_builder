@@ -11,14 +11,15 @@ export class CharacterListComponent implements OnInit {
   characterStats: CharacterStats[];
 
   constructor(public characterService: CharacterService) {
+    //console.log(characterService)
     this.characterStats = new Array;
 
   }
 
   ngOnInit() {
     this.characterService.getAll().then(result => {
-      console.log(this.characterStats);
-    });
+      //console.log(result);
 
+    });
   }
 }
