@@ -10,13 +10,14 @@ import { CharacterListComponent } from './character-list/character-list.componen
 import { LoginComponent } from './login/login.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { CharacterComponent } from './character/character.component';
+import { IndexComponent } from './index/index.component';
 
 
 const routes = [
-  { path: '',  redirectTo: 'characterList', pathMatch: 'full'},
+  { path: '',  redirectTo: 'home', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
-  { path: 'characterList', component: CharacterListComponent },
-  { path: 'character', component: CharacterComponent },
+  { path: 'home', component: CharacterListComponent },
+  { path: 'character/:id', component: CharacterComponent },
   { path: 'characterEdit', component: CharacterEditComponent }
 ];
 
@@ -27,7 +28,8 @@ const routes = [
     CharacterListComponent,
     LoginComponent,
     ItemListComponent,
-    CharacterComponent
+    CharacterComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
